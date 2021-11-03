@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-ifdef SIGN_KEY
 SIGNED_TARGET_FILES_PACKAGE := $(PRODUCT_OUT)/$(TARGET_DEVICE)-target_files-$(BUILD_ID_LC).zip
 SIGN_FROM_TARGET_FILES := $(HOST_OUT_EXECUTABLES)/sign_target_files_apks$(HOST_EXECUTABLE_SUFFIX)
 
@@ -44,9 +43,6 @@ $(PD_TARGET_PACKAGE): $(SIGNED_TARGET_FILES_PACKAGE) \
 	    -p $(OUT_DIR)/host/linux-x86 \
 	    -k $(KEY_CERT_PAIR) \
 	    $(SIGNED_TARGET_FILES_PACKAGE) $@
-else
-PD_TARGET_PACKAGE := $(PRODUCT_OUT)/$(PIXELDUST_VERSION).zip
-endif
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
@@ -83,10 +79,6 @@ pixeldust: $(INTERNAL_OTA_PACKAGE_TARGET)
 	@echo -e ${CL_CYN}"Package size:"${CL_MAG}" `ls -l $(PD_TARGET_PACKAGE) | cut -d ' ' -f 5`         "${CL_RST}
 	@echo -e ${CL_CYN}"Timestamp:   "${CL_MAG} $(BUILD_TIMESTAMP)                                       ${CL_RST}
 	@echo -e ${CL_CYN}"════════════════════════════════════════════════════════════════════════════════"${CL_RST}
-
-
-.PHONY: pixeldust-incremental
-pixeldust-incremental: $(INTERNAL_OTA_PACKAGE_TARGET)
 
 ifneq ($(PREVIOUS_TARGET_FILES_PACKAGE),)
 
