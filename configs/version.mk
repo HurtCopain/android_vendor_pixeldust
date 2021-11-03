@@ -29,7 +29,7 @@ BUILD_TIMESTAMP := $(shell date -u +%s)
 PIXELDUST_VERSION := $(PD_ROM_MAJ_VERSION)-$(BUILD_VERSION_CODE)-$(TARGET_DEVICE)-$(TARGET_BUILD_VARIANT)-$(shell date +%Y%m%d-%H%M)
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.pixeldust.version=$(PD_ROM_MAJ_VERSION)-$(BUILD_VERSION_CODE)-$(TARGET_DEVICE)-$(PD_BUILDTYPE) \
+    ro.system.pixeldust.version=$(PD_ROM_MAJ_VERSION)-$(BUILD_VERSION_CODE)-$(TARGET_DEVICE)-$(PD_BUILDTYPE) \
 
 PRODUCT_HOST_PACKAGES += \
     sign_target_files_apks \
