@@ -18,8 +18,6 @@
 PRODUCT_PACKAGES += \
     apns-conf.xml
 
-ifneq ($(filter angler blueline coral crosshatch flame marlin redfin sailfish taimen walleye, $(TARGET_DEVICE)),)
-
 # CarrierSettings, replace CarrierConfig
 PRODUCT_PACKAGES += \
     CarrierSettings
@@ -173,8 +171,6 @@ PRODUCT_PACKAGES += \
 # Disable mobile data in roaming by default.
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.android.dataroaming=false
-
-endif
 
 # Inherit from pixeldust_phone
 $(call inherit-product, vendor/pixeldust/configs/pixeldust_phone.mk)

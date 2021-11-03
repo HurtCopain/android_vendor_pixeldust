@@ -29,17 +29,7 @@ BUILD_TIMESTAMP := $(shell date -u +%s)
 PIXELDUST_VERSION := $(PD_ROM_MAJ_VERSION)-$(BUILD_VERSION_CODE)-$(TARGET_DEVICE)-$(TARGET_BUILD_VARIANT)-$(shell date +%Y%m%d-%H%M)
 
 PRODUCT_PRODUCT_PROPERTIES += \
-    com.pixeldust.fingerprint=$(PIXELDUST_VERSION) \
     ro.pixeldust.version=$(PD_ROM_MAJ_VERSION)-$(BUILD_VERSION_CODE)-$(TARGET_DEVICE)-$(PD_BUILDTYPE) \
-    ro.pixeldust.ota.version=$(ANDROID_OS_VERSION) \
-    ro.pixeldust.ota.version_code=$(BUILD_VERSION_CODE) \
-    ro.pixeldust.ota.timestamp=$(BUILD_TIMESTAMP)
-
-# Override fingerprint for Google Play Services and SafetyNet
-ifneq ($(PRODUCT_OVERRIDE_FINGERPRINT),)
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.build.stock_fingerprint=$(PRODUCT_OVERRIDE_FINGERPRINT)
-endif
 
 PRODUCT_HOST_PACKAGES += \
     sign_target_files_apks \
