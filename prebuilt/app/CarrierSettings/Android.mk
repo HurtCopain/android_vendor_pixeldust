@@ -17,19 +17,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := CarrierSettings
-LOCAL_MODULE_TAGS := optional
-LOCAL_SRC_FILES := CarrierSettings.apk
-LOCAL_CERTIFICATE := PRESIGNED
-LOCAL_MODULE_CLASS := APPS
-LOCAL_MODULE_OWNER := google
-LOCAL_PRODUCT_MODULE := true
-LOCAL_OVERRIDES_PACKAGES := CarrierConfig
-LOCAL_PRIVILEGED_MODULE := true
-LOCAL_MODULE_SUFFIX := $(COMMON_ANDROID_PACKAGE_SUFFIX)
-include $(BUILD_PREBUILT)
-
 define _add-carrier-settings-protobuf
 include $$(CLEAR_VARS)
 LOCAL_MODULE := $(notdir $(1))
