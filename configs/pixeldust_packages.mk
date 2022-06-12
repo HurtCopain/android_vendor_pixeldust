@@ -81,7 +81,7 @@ INCLUDE_PIXELLAUNCHER := true
 endif
 
 # Pixel specific
-ifneq ($(filter blueline bonito bramble coral crosshatch redfin sunfish taimen,$(TARGET_DEVICE)),)
+ifneq ($(filter blueline bonito bramble coral crosshatch oriole raven redfin sunfish taimen,$(TARGET_DEVICE)),)
 PRODUCT_PACKAGES += \
     ElmyraService
 
