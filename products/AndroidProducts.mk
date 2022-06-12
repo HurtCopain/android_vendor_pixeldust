@@ -27,7 +27,9 @@ PRODUCT_MAKEFILES += \
     $(LOCAL_DIR)/surya/pixeldust_surya.mk \
     $(LOCAL_DIR)/walleye/pixeldust_walleye.mk \
     $(LOCAL_DIR)/X01BD/pixeldust_X01BD.mk \
-    $(LOCAL_DIR)/X00T/pixeldust_X00T.mk
+    $(LOCAL_DIR)/X00T/pixeldust_X00T.mk \
+    $(LOCAL_DIR)/oriole/pixeldust_oriole.mk \
+    $(LOCAL_DIR)/raven/pixeldust_raven.mk
 
 # Lunch targets
 COMMON_LUNCH_CHOICES += \
@@ -67,4 +69,8 @@ COMMON_LUNCH_CHOICES += \
     pixeldust_X01BD-userdebug \
     pixeldust_X01BD-user \
     pixeldust_X00T-userdebug \
-    pixeldust_X00T-user
+    pixeldust_X00T-user \
+    pixeldust_oriole-userdebug \
+    pixeldust_oriole-user \
+    pixeldust_raven-userdebug \
+    pixeldust_raven-user  
