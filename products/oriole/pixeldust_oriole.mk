@@ -38,7 +38,7 @@ REMOVE_GAPPS_PACKAGES += \
     pixel_experience_2021
 
 # Google Apex
-WITH_GOOGLE_APEX := true
+#WITH_GOOGLE_APEX := true
  
  # Inherit PixelDust telephony package
 $(call inherit-product, vendor/pixeldust/configs/telephony.mk)
